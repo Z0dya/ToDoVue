@@ -3,45 +3,46 @@
         <div class="toDo">
             <div class="toDo-block">
                 <h1>To Do</h1>
-                <p class="index">{{ 1 }}</p>
+                <p class="index">{{ getTask.length }}</p>
             </div>
             <hr />
         </div>
-        <div class="task" v-for="num in id" :key="num + Math.random">
-            <div class="task-name">
-                <input class="checkbox" type="checkbox" />
-                <p>{ name }</p>
-            </div>
-            <button class="remove">Remove</button>
+        <div class="task">
+            <ToDoItem
+                v-for="item in getTask"
+                :key="item.id"
+                :id="item.id"
+                :name="item.name"
+                :isChecked="item.isChecked"
+            />
         </div>
         <div class="done">
             <div class="done-block">
                 <h1>Done</h1>
-                <p class="index">{{ 0 }}</p>
+                <p class="index">{{ getDone.length }}</p>
             </div>
             <hr />
         </div>
-        <div class="task" v-for="num in id" :key="num + Math.random">
-            <div class="task-name">
-                <input class="checkbox" type="checkbox" checked />
-                <p>{ name }</p>
-            </div>
-            <button class="remove">Remove</button>
+        <div class="task">
+            <ToDoItem
+                v-for="item in getDone"
+                :key="item.id"
+                :id="item.id"
+                :name="item.name"
+                :isChecked="item.isChecked"
+            />
         </div>
     </div>
 </template>
 
 <script>
+import ToDoItem from './ToDoItem.vue';
+import { mapGetters } from 'vuex';
 export default {
-    data() {
-        return {
-            index: 0,
-            id: 1,
-        };
+    components: {
+        ToDoItem,
     },
-    methods: {
-        getName() {},
-    },
+    computed: mapGetters(['getTask', 'getDone']),
 };
 </script>
 
@@ -66,30 +67,7 @@ export default {
     height: 100%;
     .task {
         @extend %toDoStyle;
-        flex-direction: row;
         margin: 0;
-        .task-name {
-            width: 45%;
-            display: flex;
-            gap: 10px;
-            .checkbox {
-                width: 20px;
-                cursor: pointer;
-            }
-        }
-        .remove {
-            width: 70px;
-            height: 30px;
-            background-color: #2b2b2b;
-            color: #fff;
-            border: none;
-            border-radius: 2px;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-        .remove:hover {
-            background-color: #454545;
-        }
     }
     .index {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

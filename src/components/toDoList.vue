@@ -22,7 +22,8 @@ export default {
     },
     methods: {
         getTask() {
-            this.taskName
+            // запись в mutations переменную taskName
+            this.$store.commit('setTask', this.taskName);
         },
     },
 };
