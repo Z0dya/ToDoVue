@@ -6,10 +6,8 @@
 import ToDoList from './components/ToDoList.vue';
 
 export default {
+    components: { ToDoList },
     name: 'App',
-    components: {
-        ToDoList,
-    },
 };
 </script>
 
@@ -17,6 +15,7 @@ export default {
 html {
     height: 100%;
 }
+
 body {
     height: 100%;
     margin: 0;
