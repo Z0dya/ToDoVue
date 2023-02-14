@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="main-container">
         <div class="toDo">
             <div class="toDo-block">
                 <h1>To Do</h1>
@@ -61,7 +61,7 @@ export default {
     justify-content: space-between;
     align-items: center;
 }
-.container {
+.main-container {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100%;
     height: 100%;

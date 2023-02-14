@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="main-container">
         <div class="header">
             <p class="header-logo">ToDo List</p>
             <input type="text" class="header-input" v-model="taskName" />
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.container {
+.main-container {
     width: 100%;
     height: 100%;
     margin: 0;
