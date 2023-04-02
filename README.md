@@ -1,6 +1,6 @@
 # todo-app
 
-How it looks like - https://to-do-vue-brown.vercel.app/
+How it looks like - https://to-do-vue-topaz.vercel.app/
 
 ## Project setup
 
